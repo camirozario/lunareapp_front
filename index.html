@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunare</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">lunare</div>
+      <nav class="sidebar-nav">
+        <a class="nav-link active" href="#">dashboard</a>
+        <a class="nav-link" href="#">calendar</a>
+        <a class="nav-link" href="#">insights</a>
+      </nav>
+    </aside>
+
+    <main class="main-panel">
+
+      <!--HEADER-->
+      <header class="topbar">
+        <div></div>
+        <div class="hero-copy">
+          <h1>track your cycle</h1>
+          <p id="tracked-date" class="tracked-date">--</p>
+        </div>
+
+        <div class="top-icons" aria-label="Quick actions">
+          <button class="top-icon-btn" type="button" aria-label="Login">↪</button>
+          <button class="top-icon-btn" type="button" aria-label="Exit">⎋</button>
+        </div>
+      </header>
+
+      <!--CYCLE AREA-->
+      <section class="cycle-area">
+        <div id="cycle-ring-wrap" class="ring-wrap">
+          <div class="ring-outer">
+            <div class="ring-inner">
+              <span id="cycle-day">--</span>
+            </div>
+          </div>
+          <div id="ring-markers" class="ring-markers" aria-hidden="true"></div>
+          <button id="cycle-knob" class="cycle-knob" type="button" aria-label="Select cycle day"></button>
+        </div>
+
+        <p class="cycle-phase" id="cycle-phase">NO PHASE</p>
+        <p class="cycle-hint">Drag around the ring to view symptoms from another cycle day.</p>
+      </section>
+
+      <section class="tracker-area">
+        <div class="tracker-bar-wrap">
+          <div class="tracker-bar">
+            <div class="tracker-input-wrap">
+              <input
+                id="symptom-input"
+                class="tracker-input"
+                type="text"
+                placeholder="track your symptoms"
+                autocomplete="off"
+              />
+              <div id="suggestions-panel" class="suggestions-panel" hidden></div>
+            </div>
+
+            <div class="topic-select-wrap">
+              <select id="topic-select" class="topic-select">
+                <option value="">topic</option>
+              </select>
+              <button id="edit-topic-btn" class="new-topic-btn topic-edit-btn" type="button" aria-label="Edit selected topic">✎</button>
+              <button id="new-topic-btn" class="new-topic-btn" type="button" aria-label="Create new topic">+</button>
+            </div>
+
+            <button id="add-symptom-btn" class="add-btn" type="button">
+              add
+            </button>
+          </div>
+        </div>
+
+        <div id="helper-message" class="helper-message"></div>
+      </section>
+
+      <section class="symptoms-area">
+        <div id="symptoms-list" class="symptoms-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="edit-overlay" class="edit-overlay" hidden></div>
+  <aside id="edit-sidebar" class="edit-sidebar" aria-label="Right side panel">
+    <div class="edit-sidebar-header">
+      <div>
+        <p id="sidebar-mode-label" class="edit-label">editing symptom</p>
+        <h2 id="edit-symptom-name">Symptom</h2>
+        <p id="edit-topic-name" class="edit-topic-name">Topic</p>
+      </div>
+      <button id="edit-close-btn" class="edit-close-btn" type="button" aria-label="Close">×</button>
+    </div>
+
+    <div id="symptom-edit-section">
+      <div class="edit-section">
+        <label class="edit-field-label" for="edit-symptom-topic-select">Topic</label>
+        <select id="edit-symptom-topic-select" class="sidebar-select">
+          <option value="">Choose topic</option>
+        </select>
+      </div>
+
+      <div class="edit-section">
+        <label class="edit-field-label">Intensity</label>
+        <div class="edit-intensity-header">
+          <span>How strong was it?</span>
+          <strong id="edit-intensity-value">3/5</strong>
+        </div>
+        <div id="edit-intensity-bar" class="edit-intensity-bar" role="group" aria-label="Select intensity"></div>
+      </div>
+
+      <div class="edit-section">
+        <label class="edit-field-label" for="edit-note">Notes</label>
+        <textarea id="edit-note" rows="6" placeholder="add a note"></textarea>
+      </div>
+
+      <button id="edit-save-btn" class="edit-save-btn" type="button">save changes</button>
+    </div>
+
+    <div id="topic-create-section" hidden>
+      <div class="edit-section">
+        <label class="edit-field-label" for="topic-name-input">Topic name</label>
+        <input id="topic-name-input" class="sidebar-input" type="text" placeholder="for example mood" />
+      </div>
+
+      <div class="edit-section">
+        <label class="edit-field-label">Topic color</label>
+        <div id="topic-palette" class="topic-palette" aria-label="Choose pastel color"></div>
+        <div class="topic-color-row">
+          <input id="topic-color-input" class="topic-color-input" type="hidden" value="#cdbba8" />
+          <span id="topic-color-preview" class="topic-color-preview"></span>
+          <span class="topic-color-value">preview color</span>
+        </div>
+      </div>
+
+      <button id="topic-save-btn" class="edit-save-btn" type="button">create topic</button>
+    </div>
+  </aside>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
