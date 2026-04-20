@@ -35,25 +35,6 @@ Aplicação web minimalista para acompanhar o ciclo menstrual e registrar sintom
 
 ---
 
-## 🏗️ Estrutura do Projeto
-
-
-project-root/
-│
-├── meu_app_api/ # Backend (Flask)
-│ ├── app.py
-│ ├── model/
-│ └── database/
-│
-├── meu_app_front/ # Frontend
-│ ├── index.html
-│ ├── styles.css
-│ ├── scripts.js
-│
-└── README.md
-
-
----
 
 ## ⚙️ Como rodar o projeto
 
