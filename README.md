@@ -1,9 +1,8 @@
 # 🌙 Lunare  
 ### Tracker de Ciclo & Sintomas
 
-Aplicação web minimalista para acompanhar o ciclo menstrual e registrar sintomas ao longo do mês.
+O Lunare foi criado para melhorar a qualidade de vida de seu usuário. Com o foco majoritário em mulheres, a aplicação permite trackear sintomas diversos, criados pelo próprio usuário ao longo do mês. A UI foi pensada para facilitar a visualização desses sintomas - a roda central mostra um resumo com cores, identificando os tipos de sintomas registrados. A finalidade é permitir que mulheres compreendam ainda melhor cada particularidade do seu corpo, que tem um ciclo lunar. 
 
-> Uma forma simples e visual de entender seu corpo 💫
 
 ---
 
@@ -39,6 +38,8 @@ Aplicação web minimalista para acompanhar o ciclo menstrual e registrar sintom
 ## ⚙️ Como rodar o projeto
 
 ### 🔹 Backend (Flask)
+
+Para a execução correta do projeto, o usuário deve ter a API ativa. Como proposta do MVP, foi requerido que API fosse comitada em um repositório distinto. A API do lunare se encontra no seguinte link: [https://github.com/camirozario/lunareapp_api](https://github.com/camirozario/lunareapp_api)
 
 Instalar dependências:
 
